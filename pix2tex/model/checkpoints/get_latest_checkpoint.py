@@ -42,7 +42,7 @@ def download_checkpoints():
     resizer = 'https://github.com/lukas-blecher/LaTeX-OCR/releases/download/%s/image_resizer.pth' % tag
     for url, name in zip([weights, resizer], ['weights.pth', 'image_resizer.pth']):
         file = download_as_bytes_with_progress(url, name)
-        open(os.path.join(os.path.abspath(os.getcwd()), name), "wb").write(file)
+        open(os.path.join(Path("/home/occam/.latexocr", name), "wb").write(file)
 
 
 if __name__ == '__main__':
