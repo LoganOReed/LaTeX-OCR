@@ -44,6 +44,7 @@ def minmax_size(img: Image, max_dimensions: Tuple[int, int] = None, min_dimensio
         ratios = [a/b for a, b in zip(img.size, max_dimensions)]
         if any([r > 1 for r in ratios]):
             size = np.array(img.size)//max(ratios)
+            print(size)
             img = img.resize(size.astype(int), Image.BILINEAR)
     if min_dimensions is not None:
         # hypothesis: there is a dim in img smaller than min_dimensions, and return a proper dim >= min_dimensions
